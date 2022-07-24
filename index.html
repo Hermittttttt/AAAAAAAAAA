@@ -1,27 +1,42 @@
-<!DOCTYPE html>
-		<html>
-		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<title></title>
-		</head>
-		<body>
-		<form>
-		<label for="username">nama lo olang :</label>
-		<input type="text" id="nama lo olang">
-			<br>
-		<label for="paswok">paswok :</label>
-		<input type="paswok" id="paswok">
-			<br>
-		<input type="radio" id="pria" name="jeniskelamin"><label for="pria">pria</label>
-		<input type="radio" id="wanita" name="jeniskelamin"><label for="wanita">wanita</label>
-			<br>
-		<input type="checkbox" id="menyanyi"><label for="menyanyi">menyanyi</label>
-		<input type="checkbox" id="ngoding"><label for="menyanyi">ngoding</label>
-		<input type="checkbox" id="olahraga"><label for="menyanyi">olahraga</label>
-			<br>
-			<button type="submit">Kirim!</button>
+var tanya = true;
+
+while (tanya ){
+// pilihan player
+var p = prompt('pilih: batu, gunting, kertas');
+
+// pilihan computer
+// summon random
+var comp = Math.random();
+
+if (comp<0.34){
+	comp = 'batu';
+} else if(comp >= 0.34 && comp < 0.67){
+	comp= 'gunting';
+} else {
+	comp ='kertas';
+}
+
+var hasil = '';
+// rules
+if(p == comp){
+	hasil ='seri';
+} else if (p == 'batu'){
+	//if(comp == 'orang'){
+	//	hasil = 'menang';
+	//} else {
+	//	hasil ='klah';
+	//}
+	hasil = (comp =='gunting') ? 'menang' : 'kalah';
+} else if (p== 'orang') {
+	hasil =( comp == 'batu') ? 'kalah' : 'kalah';
+} else if (p== 'kertas') {
+	hasil =(comp='gunting') ? 'kalah' : 'menang';
+} else {
+	hasil =' ketik betol sikit napa kemem';
+}
 
 
-		</body>
-		</html>
+// hasil
+alert('kamu memilih : '+p+' dan komputer memilih : '+ comp +'\nmaka hasilnya adalah kamu ' + hasil);
+ tanya = confirm('bewan lagi?');
+}
